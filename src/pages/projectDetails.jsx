@@ -12,31 +12,34 @@ export default function ProjectDetails() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center pt-24">
         <h2 className="text-2xl font-bold mb-4">Project Tidak Ditemukan!</h2>
-        <Link to="/" className="text-blue-400 hover:underline">← Kembali ke Beranda</Link>
+        <Link to="/" className="text-blue-400 hover:underline">
+          ← Kembali ke Beranda
+        </Link>
       </div>
     );
   }
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       className="min-h-screen pt-28 pb-12 px-4 sm:px-6 lg:px-8 relative z-9"
     >
       <div className="max-w-4xl mx-auto">
-        
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="inline-flex items-center text-gray-600 hover:underline mb-8 transition-colors"
         >
           <span className="mr-2">←</span> Kembali ke Portofolio
         </Link>
 
         <div className="w-full overflow-hidden rounded-2xl border border-gray-100 shadow-2xl mb-8 bg-gray-950">
-          <img 
-            src={project.image} 
-            alt={project.title} 
+          <img
+            src={project.image}
+            alt={project.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto max-h-[450px] object-cover mx-auto"
           />
         </div>
@@ -47,8 +50,8 @@ export default function ProjectDetails() {
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tech.map((techName) => (
-            <span 
-              key={techName} 
+            <span
+              key={techName}
               className="text-blue-400 border shadow shadow-gray-400  border-blue-500/20 px-3 py-1 rounded-md text-sm font-medium"
             >
               {techName}
@@ -66,17 +69,17 @@ export default function ProjectDetails() {
         </div>
 
         <div className="flex flex-wrap gap-4 pt-4">
-          <a 
-            href={project.liveLink} 
-            target="_blank" 
+          <a
+            href={project.liveLink}
+            target="_blank"
             rel="noopener noreferrer"
             className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-3 rounded-lg transition-colors shadow-lg shadow-blue-600/20"
           >
             Kunjungi Website Live
           </a>
-          <a 
-            href={project.githubLink} 
-            target="_blank" 
+          <a
+            href={project.githubLink}
+            target="_blank"
             rel="noopener noreferrer"
             className="bg-gray-800 hover:bg-gray-700 text-white font-medium px-6 py-3 rounded-lg border border-gray-700 transition-colors"
           >
